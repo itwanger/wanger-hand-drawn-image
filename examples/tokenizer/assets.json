@@ -1,0 +1,18 @@
+{
+  "【截图：官方 Token 用量说明与原句的 8 个本地实测编号；截图目标：分开标明官方说明和仅编码原句的测量条件】": {
+    "file": "images/usage.png",
+    "alt": "DeepSeek 官方用量说明与原句的八个 Token"
+  },
+  "【截图：文字怎样进出模型；截图目标：用循环 GIF 展示编码、预测、接回上下文和解码】": {
+    "file": "images/generation.gif",
+    "alt": "分词器编码、模型生成与解码循环"
+  },
+  "【截图：整词、字节和子词切分对照；风格：checklist-card；关键词：人工智能、12 个字节、ID 33574】": {
+    "file": "images/compare.png",
+    "alt": "人工智能的三种切分方式"
+  },
+  "【截图：生僻字的逐步解码；截图目标：使用真实 Case 状态演示 4 个 ID 和最终输出】": {
+    "file": "images/rare-character.gif",
+    "alt": "四个 Token 到齐后显示生僻字𠮷"
+  }
+}

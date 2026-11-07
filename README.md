@@ -2,7 +2,14 @@
 
 把技术文章里的 `【截图：……】` 变成读者真正需要的图。**wanger-image** 是沉默王二的中文文章配图 Skill，可以在 Codex 里引用官方截图、捕获本地实测结果、生成手绘原理图，也可以把需要看过程的段落做成循环 GIF。
 
-下面这张图来自分词器 Case。先看「开源」如何变成 ID，再沿橙色回路看模型怎样预测下一个 Token。
+## 分词器文章的三种配图
+
+| 手绘静态图 | 真实截图与本地实测 |
+| --- | --- |
+| ![手绘三栏对照图：整词、UTF-8 字节和子词分别怎样表示「人工智能」](examples/tokenizer/images/compare.png) | ![左侧是 DeepSeek 官方 Token 用量说明截图，右侧是本地分词器对示例句的切分结果](examples/tokenizer/images/usage.png) |
+| 对照同一个词：「人工智能」占 12 个 UTF-8 字节，在这版分词器里只占 1 个 Token。 | 对照来源和结果：「王二讲 Agent 开源了吗？」在本地编码为 8 个 Token，两个空格也能逐个核对。 |
+
+**机制 GIF**　沿橙色回路看一次预测：模型选出一个 Token，把它接回上下文，再预测下一个。
 
 ![分词器把文字编码为 ID，模型生成下一个 Token 后回到上下文，最后解码为回答](examples/tokenizer/images/generation.gif)
 

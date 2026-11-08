@@ -1,4 +1,4 @@
 interface:
-  display_name: "Wanger Image · 二哥文章配图"
-  short_description: "把中文技术文章里的截图占位符替换为真实截图、手绘图解或循环 GIF"
-  default_prompt: "使用 $wanger-image 替换这篇 Markdown 的截图占位符，将图片保存到文章旁，用相对路径回填并检查结果。"
+  display_name: "Wanger Image · 二哥生图"
+  short_description: "用二哥 image 生图，制作手绘技术图解、循环 GIF 和文章配图"
+  default_prompt: "用二哥 image 生图：使用 $wanger-image，按指定排版生成技术图解；要求 GIF 时交付循环动图。"

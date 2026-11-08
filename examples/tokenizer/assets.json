@@ -3,7 +3,7 @@
     "file": "images/usage.png",
     "alt": "DeepSeek 官方用量说明与原句的八个 Token"
   },
-  "【截图：文字怎样进出模型；截图目标：用循环 GIF 展示编码、预测、接回上下文和解码】": {
+  "【截图：文字怎样进出模型；截图目标：看清选出的 Token 如何接回上下文并触发下一轮预测】": {
     "file": "images/generation.gif",
     "alt": "分词器编码、模型生成与解码循环"
   },

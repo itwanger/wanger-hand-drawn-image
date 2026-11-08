@@ -1,4 +1,4 @@
 interface:
   display_name: "Wanger Image · 二哥生图"
   short_description: "用二哥 image 生图，制作手绘技术图解、循环 GIF 和文章配图"
-  default_prompt: "用二哥 image 生图：使用 $wanger-image，按指定排版生成技术图解；要求 GIF 时交付循环动图。"
+  default_prompt: "用二哥 image 生图：使用 $wanger-image，结合占位符和相邻段落选择合适的配图。"

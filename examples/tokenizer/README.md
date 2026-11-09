@@ -15,7 +15,7 @@
 
 ```bash
 cd examples/tokenizer
-python3 ../../skills/wanger-image/scripts/render_article.py before.md assets.json > replay.md
+python3 ../../skills/wanger-hand-drawn-image/scripts/render_article.py before.md assets.json > replay.md
 diff -u after.md replay.md
 ```
 
@@ -39,7 +39,7 @@ uv run --with tokenizers measure.py tokenizer.json
 机制图的[手绘底图](scene/master.png)和[动画配置](scene/scene.json)也随仓库提供。macOS 安装 Swift、FFmpeg（含 ffprobe）后，可在本 Case 目录重新渲染到新的目录。
 
 ```bash
-python3 ../../skills/wanger-image/scripts/render_gif.py scene/scene.json --output render-output
+python3 ../../skills/wanger-hand-drawn-image/scripts/render_gif.py scene/scene.json --output render-output
 ```
 
-脚本导出 GIF、静音 MP4、抽帧联系表和尺寸记录。检查两张现成的 GIF 可运行 `python3 ../../skills/wanger-image/scripts/verify_gif.py images/generation.gif`，依赖 Pillow。
+脚本导出 GIF、静音 MP4、抽帧联系表和尺寸记录。检查两张现成的 GIF 可运行 `python3 ../../skills/wanger-hand-drawn-image/scripts/verify_gif.py images/generation.gif`，依赖 Pillow。

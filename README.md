@@ -1,8 +1,8 @@
-# wanger-image
+# wanger-hand-drawn-image
 
-把技术文章里的 `【截图：……】` 变成读者真正需要的图。**wanger-image** 是沉默王二的中文文章配图 Skill，可以在 Codex 里引用官方截图、捕获本地实测结果、生成手绘原理图，也可以把需要看过程的段落做成循环 GIF。
+把技术文章里的 `【截图：……】` 变成读者真正需要的图。**wanger-hand-drawn-image** 是沉默王二的中文手绘风文章配图 Skill，可以在 Codex 里引用官方截图、捕获本地实测结果、生成手绘原理图，也可以把需要看过程的段落做成循环 GIF。
 
-默认使用**二哥手绘风**。白板、能力卡、数据看板、三层架构、泳道和清单卡是六种排版；PNG 或循环 GIF 是输出格式。只需说「替换这篇文章的截图占位符」。Skill 会结合每处占位符和相邻段落选材：要核对 Token ID 就放静态对照图，要看字节到齐后才显示汉字的过程就做成 GIF。
+原创图解使用**二哥手绘风**。默认出**精简版**，每张只保留一个焦点。需要在一张图里看清全景、局部和步骤时可以点名**详解版**。两版都支持白板、能力卡、数据看板、三层架构、泳道和清单卡六种排版。只需说「替换这篇文章的截图占位符」。Skill 会结合每处占位符和相邻段落选材：要核对 Token ID 就放静态对照图，要看字节到齐后才显示汉字的过程就做成 GIF。
 
 ## 分词器文章的三种配图
 
@@ -20,8 +20,8 @@
 ## 在 Codex 里试一次
 
 ```bash
-git clone https://github.com/itwanger/wanger-image.git
-cd wanger-image
+git clone https://github.com/itwanger/wanger-hand-drawn-image.git
+cd wanger-hand-drawn-image
 cp examples/tokenizer/before.md examples/tokenizer/my-article.md
 codex
 ```
@@ -29,11 +29,11 @@ codex
 在 Codex 输入下面这句话。桌面版也可以直接打开这个仓库，在新对话里输入同样的指令。
 
 ```text
-使用 $wanger-image 替换 examples/tokenizer/my-article.md 的四处占位符。
+使用 $wanger-hand-drawn-image 替换 examples/tokenizer/my-article.md 的四处占位符。
 按同目录 assets.json 的映射复用现成素材，使用本地相对路径，只改占位符。
 ```
 
-打开 `my-article.md` 就能看到两张 PNG 和两张 GIF。仓库已经通过 `.agents/skills/wanger-image` 暴露了 Skill。这个例子用现成素材，无需配置图床。也可以[用一条 Python 命令离线复现](examples/tokenizer/README.md#离线复现回填)。
+打开 `my-article.md` 就能看到两张 PNG 和两张 GIF。仓库已经通过 `.agents/skills/wanger-hand-drawn-image` 暴露了 Skill。这个例子用现成素材，无需配置图床。也可以[用一条 Python 命令离线复现](examples/tokenizer/README.md#离线复现回填)。
 
 ## 给自己的文章配图
 
@@ -41,10 +41,12 @@ codex
 
 ```bash
 mkdir -p ~/.agents/skills
-ln -s "$PWD/skills/wanger-image" ~/.agents/skills/wanger-image
+ln -s "$PWD/skills/wanger-hand-drawn-image" ~/.agents/skills/wanger-hand-drawn-image
 ```
 
-只想在某个项目使用，可以将 `skills/wanger-image/` 整个复制到目标项目的 `.agents/skills/wanger-image/`。回到文章所在项目，新开 Codex 对话，输入 `$wanger-image` 并给出 Markdown 路径。显式使用 Skill 和本地发现路径可查 [Codex 官方说明](https://learn.chatgpt.com/docs/build-skills)。
+从旧版升级时，先核对安装位置。如果旧的 `~/.agents/skills/wanger-image` 是指向本仓库的符号链接，可以移除旧链接，再用上面的命令安装新入口。
+
+只想在某个项目使用，可以将 `skills/wanger-hand-drawn-image/` 整个复制到目标项目的 `.agents/skills/wanger-hand-drawn-image/`。回到文章所在项目，新开 Codex 对话，输入 `$wanger-hand-drawn-image` 并给出 Markdown 路径。显式使用 Skill 和本地发现路径可查 [Codex 官方说明](https://learn.chatgpt.com/docs/build-skills)。
 
 正文中把占位符放在独立的一行。例如：
 
@@ -53,7 +55,7 @@ ln -s "$PWD/skills/wanger-image" ~/.agents/skills/wanger-image
 ```
 
 ```text
-使用 $wanger-image 替换 docs/tokenizer.md 里的截图占位符。
+使用 $wanger-hand-drawn-image 替换 docs/tokenizer.md 里的截图占位符。
 把图放在文章旁的 images/，用相对链接回填。
 ```
 
@@ -64,7 +66,7 @@ ln -s "$PWD/skills/wanger-image" ~/.agents/skills/wanger-image
 | 结构、异同、数字对照 | 中文手绘图解 | 可用的图像生成工具；随包提供 6 种排版、9 张基础版式参考 |
 | 循环、分支、状态变化 | 手绘机制 GIF | 手绘底图；内置渲染器使用 macOS、Swift、FFmpeg 和 Python 3 |
 
-默认用本地相对路径。需要发布到自己的图床时，可以使用随包的 [阿里云 OSS 上传说明](skills/wanger-image/references/oss.md)。算法测量、在线截图和图像生成各有自己的依赖，单纯复用已有成品只需 Python 3。
+默认用本地相对路径。需要发布到自己的图床时，可以使用随包的 [阿里云 OSS 上传说明](skills/wanger-hand-drawn-image/references/oss.md)。算法测量、在线截图和图像生成各有自己的依赖，单纯复用已有成品只需 Python 3。
 
 ## 许可
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wanger Hand-drawn Image · 二哥手绘配图"
+  short_description: "用二哥手绘风制作文章图解、实测截图和循环 GIF，可选精简版或详解版。"
+  default_prompt: "使用 $wanger-hand-drawn-image 为这篇文章配手绘风插图，按占位符选择静态图或循环 GIF。"
